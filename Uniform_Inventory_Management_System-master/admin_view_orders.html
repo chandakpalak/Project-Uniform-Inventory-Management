@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <link rel="stylesheet" type="text/css" href="style_order_details.css">
+    <link rel="stylesheet" href="style_home_page.css">
+    <style>
+    h1{
+        color: rgb(74, 113, 113);
+    }
+    body{
+        font-size: larger;
+        color: white;
+    }
+    form{
+        background-color: rgb(33, 128, 130);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+     /* table{ 
+
+     } */
+    input{
+        width: 100%;
+        padding: 8px;
+        border-radius: 3px;
+        border: 0px solid;
+    }
+    textarea{
+        width: 100%;
+    }
+    button{
+        background-color: rgb(203, 230, 203);
+        border: 0px solid;
+        padding: 8px;
+        font-size: large;
+        border-radius: 5px;
+    }
+    select{
+        padding: 8px;
+        width:100%;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Function to fetch and display the orders
+        function fetchOrders() {
+            // Send an AJAX request to the PHP script to fetch the orders
+            $.ajax({
+                url: 'view_orders.php',
+                type: 'GET',
+                dataType: 'html',
+                success: function(response) {
+                    // Display the orders in the HTML element with ID "orderTable"
+                    $('#orderTable').html(response);
+                },
+                error: function(xhr, status, error) {
+                    console.log('AJAX request error:', error);
+                }
+            });
+        }
+
+        // Example usage:
+        // Call the fetchOrders() function when the "View Order" button is clicked
+        $('#viewOrdersButton').on('click', function() {
+            fetchOrders();
+        });
+    });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Welcome!! !!</h1>
+                <ul>
+                    <!-- <li><a href="home.php">New Order</a></li> -->
+                    <li><a href="order_details.html">Search Order</a></li>
+                    <li><a href="admin_view_orders.php">Track Order</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Order Details</h1>
+        <button id="viewOrdersButton">View Order</button>
+        <div id="orderTable"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

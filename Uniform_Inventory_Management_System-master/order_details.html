@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <link rel="stylesheet" type="text/css" href="style_home_page.css">
+    <style>
+        /* CSS for header and footer */
+        /* Insert your header and footer CSS here */
+        
+        /* CSS for the order details section */
+            table.order-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+        
+            table.order-table th,
+            table.order-table td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+        
+            table.order-table th {
+                background-color: #f2f2f2;
+            }
+        
+            table.order-table td {
+                background-color: #fff;
+            }
+            h1{
+                color: rgb(74, 113, 113);
+            }
+            body{
+                font-size: larger;
+                color: white;
+            }
+            form{
+                background-color: rgb(33, 128, 130);
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 10px;
+            }
+            input{
+                width: 100%;
+                padding: 8px;
+                border-radius: 3px;
+                border: 0px solid;
+            }
+            textarea{
+                width: 100%;
+            }
+            button{
+                background-color: rgb(203, 230, 203);
+                border: 0px solid;
+                padding: 8px;
+                font-size: large;
+                border-radius: 5px;
+            }
+            select{
+                padding: 8px;
+                width:100%;
+            }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #4A7171;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .search-form {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4A7171;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .order-table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+        }
+        
+        .order-table th, .order-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .order-table th {
+            background-color: #4A7171;
+            color: #fff;
+        }
+        
+        /* Insert additional CSS styles as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Welcome!! !!</h1>
+                <ul>
+                    <!-- <li><a href="admin_dashboard.php">New Order</a></li> -->
+                    <li><a href="admin_view_orders.php">View Orders</a></li>
+                    <li><a href="order_details.html">Search Orders</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>Order Details</h1>
+        
+        <form class="search-form" action="order_details.php" method="POST">
+            <input type="text" class="search-input" name="Customer_Name" placeholder="Enter client name">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        
+        <!-- Display the order details table here -->
+        <div id="order-table-container">
+            <!-- The fetched data will be displayed here dynamically using JavaScript -->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
